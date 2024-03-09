@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: dazn-user
+      MONGO_INITDB_ROOT_PASSWORD: uTgswtamkcw&1t7i
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass 4ac79023-a11e-445a-b7d8-14a04dbd3013
+  dazn-test:
+    container_name: dazn-test
+    build:
+      context: ./
+      target: production
+    image: dazn-test
+    ports:
+      - '8081:8081'
+    depends_on:
+      - mongo
+      - redis

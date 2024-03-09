@@ -1,0 +1,135 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "DAZN",
+    "dateExported": "2024-03-09T17:23:31.091Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "0bc632dc-20ab-4263-9d50-f6e2e9f930dc",
+            "colId": "098169fd-4d3c-477a-a6ba-9c8deb5ffa2c",
+            "containerId": "",
+            "name": "DAZN-SEARCH-BY-QUERY",
+            "url": "http://localhost:8081/movies/search?q=movie-name",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-09T12:37:47.306Z",
+            "modified": "2024-03-09T16:13:45.156Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "q",
+                    "value": "movie-name",
+                    "isPath": false
+                }
+            ],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "a7dfa730-4e29-4250-b55e-6d95ace41db9",
+            "colId": "098169fd-4d3c-477a-a6ba-9c8deb5ffa2c",
+            "containerId": "",
+            "name": "DAZN-CREATE-TOKEN",
+            "url": "http://localhost:8081/auth/generateToken",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-09T12:37:53.119Z",
+            "modified": "2024-03-09T17:23:16.136Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"user\": \"dazn-test\",\n  \"passKey\": \"NGU0NjRlMDctMzVmNy00YjM2LTk0Y2YtODgwNjUxZjYzNjQ4\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "712f3e92-4fbb-4c51-be31-92c68b807913",
+            "colId": "098169fd-4d3c-477a-a6ba-9c8deb5ffa2c",
+            "containerId": "",
+            "name": "DAZN-ADD",
+            "url": "http://localhost:8081/movies",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-03-09T12:38:02.001Z",
+            "modified": "2024-03-09T16:31:15.148Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJ1c2VyIjoiZGF6bi10ZXN0IiwiaWF0IjoxNzA5OTg4NjA3fQ.KUoAZx6Ukgxk5LP5t8vyhFuggMGJEifuQuPt3T5eAy8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Hangover 1\",\n  \"ratings\": 5.0,\n  \"genre\": [\"Comedy\"]\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "2cc1b780-a945-48af-a5a3-09f0710fc12e",
+            "colId": "098169fd-4d3c-477a-a6ba-9c8deb5ffa2c",
+            "containerId": "",
+            "name": "DAZN-DELETE",
+            "url": "http://localhost:8081/movies/65ec59e8eb371a6dd52530b7",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-03-09T12:38:07.186Z",
+            "modified": "2024-03-09T17:23:21.783Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJ1c2VyIjoiZGF6bi10ZXN0IiwiaWF0IjoxNzA5OTg4NjA3fQ.KUoAZx6Ukgxk5LP5t8vyhFuggMGJEifuQuPt3T5eAy8"
+                }
+            ],
+            "params": [],
+            "reqType": "del",
+            "tests": []
+        },
+        {
+            "_id": "de816bfe-327b-47cf-be4f-eb532a4432ec",
+            "colId": "098169fd-4d3c-477a-a6ba-9c8deb5ffa2c",
+            "containerId": "",
+            "name": "DAZN-UPDATE",
+            "url": "http://localhost:8081/movies/65ec545703596983ddfd8b41",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2024-03-09T12:38:12.110Z",
+            "modified": "2024-03-09T17:23:26.511Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Hangover 1\",\n  \"ratings\": 5.0,\n  \"genre\": [\"Comedy\"]\n}",
+                "form": []
+            },
+            "reqType": "put",
+            "tests": []
+        },
+        {
+            "_id": "34721df1-e15f-44a4-b1db-5b4cf41efc44",
+            "colId": "098169fd-4d3c-477a-a6ba-9c8deb5ffa2c",
+            "containerId": "",
+            "name": "DAZN-GETALL",
+            "url": "http://localhost:8081/movies/search?q=hangover",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-03-09T16:46:23.522Z",
+            "modified": "2024-03-09T16:46:23.522Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "q",
+                    "value": "hangover",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}
